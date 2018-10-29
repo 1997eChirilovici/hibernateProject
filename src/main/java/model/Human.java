@@ -10,6 +10,13 @@ public class Human {
     private int id;
     private String nameHuman;
 
+    public Human() {
+    }
+
+    public Human(String nameHuman) {
+        this.nameHuman = nameHuman;
+    }
+
     @Id
     @Column(name = "id")
     public int getId() {
@@ -48,5 +55,13 @@ public class Human {
         int result = id;
         result = 31 * result + (nameHuman != null ? nameHuman.hashCode() : 0);
         return result;
+    }
+
+    @Override
+    public String toString() {
+        return "Human{" +
+                "id=" + id +
+                ", nameHuman='" + nameHuman + '\'' +
+                '}';
     }
 }

@@ -22,17 +22,16 @@ public class GenderDao implements GenderDaoInterface <Gender,Integer> {
     }
 
     public Gender findById(Integer id) {
-        Gender gender = (Gender) sessionManage.getCurrentSession().get(Gender.class, id);
-        return gender;
+        return sessionManage.getCurrentSession().get(Gender.class, id);
     }
 
     public void delete(Gender entity) {
         sessionManage.getCurrentSession().delete(entity);
     }
 
+    @SuppressWarnings("unchecked")
     public List<Gender> findAll() {
-        List<Gender> gender = (List<Gender>) sessionManage.getCurrentSession().createQuery("from Gender").list();
-        return gender;
+        return sessionManage.getCurrentSession().createQuery("from Gender").list();
     }
 
     public void deleteAll() {

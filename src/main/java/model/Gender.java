@@ -10,6 +10,13 @@ public class Gender {
     private int id;
     private String titleGender;
 
+    public Gender() {
+    }
+
+    public Gender(String titleGender) {
+        this.titleGender = titleGender;
+    }
+
     @Id
     @Column(name = "id")
     public int getId() {
@@ -18,13 +25,6 @@ public class Gender {
 
     public void setId(int id) {
         this.id = id;
-    }
-
-    public Gender() {
-    }
-
-    public Gender(String titleGender) {
-        this.titleGender = titleGender;
     }
 
     @Basic
